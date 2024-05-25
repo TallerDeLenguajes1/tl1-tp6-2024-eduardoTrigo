@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/tl.csproj",
+                "${workspaceFolder}/ejercicio2.csproj", //CAMBIAR POR EL NOMBRE DEL ARCHIVO .csproj QUE ESTA EN LA CARPETA RAIZ 
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/tl.csproj",
+                "${workspaceFolder}/ejercicio2.csproj", //CAMBIAR POR EL NOMBRE DEL ARCHIVO .csproj QUE ESTA EN LA CARPETA RAIZ
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/tl.csproj"
+                "${workspaceFolder}/ejercicio2.csproj" //CAMBIAR POR EL NOMBRE DEL ARCHIVO .csproj QUE ESTA EN LA CARPETA RAIZ
             ],
             "problemMatcher": "$msCompile"
         }
