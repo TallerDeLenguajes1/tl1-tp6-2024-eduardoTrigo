@@ -1,52 +1,67 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Ingrese un Numero");
 
-Console.WriteLine("Elija una opcion: ");
-Console.WriteLine("1- Sumar.");
-Console.WriteLine("2- Restar.");
-Console.WriteLine("3- multiplicar.");
-Console.WriteLine("4- Dividir.");
-string cadena1 = Console.ReadLine() ?? "0"; // Manejar posibles valores nulos;
-int opcion;
+double num;
+string cadena = Console.ReadLine();
 
-int.TryParse(cadena1, out opcion);
-
-Console.WriteLine("usteda a elegido la opcion: " +opcion);
-int a , b;
-int resultado=0;
-Console.WriteLine("ingrese el primer numero");
-string numA = Console.ReadLine() ?? "0"; // Manejar posibles valores nulos;
-Console.WriteLine("ingrese el segundo numero");
-string numB = Console.ReadLine() ?? "0"; // Manejar posibles valores nulos;
-
-int.TryParse(numA, out a);
-int.TryParse(numB, out b);
-
-switch (opcion)
+if (double.TryParse(cadena, out num ))
 {
-    case 1: 
-        resultado = a + b;
-        Console.WriteLine("resultado de la operacion:" + resultado);
-        break;
-    case 2: 
-        resultado = a - b;
-        Console.WriteLine("resultado de la operacion:" + resultado);
-        break;
-    case 3: 
-        resultado = a * b;
-        Console.WriteLine("resultado de la operacion:" + resultado);
-        break;
-    case 4:
-            double resultadoDivision;  //variable con punto flotante para la division
-        if (b != 0)
-        {
-            resultadoDivision = (double)a / b;
-            Console.WriteLine("resultado de la operacion:" + resultadoDivision);
-        }else{
-            Console.WriteLine("operacion invalida");
-        }
-        break;
-    default:
-        Console.WriteLine("Opción no válida.");
-        break;
+double valorAbsoluto;
+double cuadrado;
+double raizCuadrada;
+double seno;
+double coseno;
+
+//Valor Absoluto
+valorAbsoluto = Math.Abs(num);
+Console.WriteLine($"el valor absoluto de {num} es {valorAbsoluto}");
+//Cuadrado
+
+cuadrado = Math.Pow(num,2);
+Console.WriteLine($"el Cuadrdado de{num} es {cuadrado}");
+
+// raiz cuadrada
+if (num > 0)
+{
+    raizCuadrada = Math.Sqrt(num);
+    Console.WriteLine($"la Raiz cuadrada de {num} es {raizCuadrada}");
+}else
+{
+    Console.WriteLine("No se puede calcular la raiz de un numero menor a 0");
+}
+//seno 
+seno = Math.Sin(num);
+Console.WriteLine($"el seno de {num} es {seno}");
+// coseno
+coseno = Math.Cos(num);
+Console.WriteLine($"el coseno de {num} es {coseno}");
+
+// la parte entera de un tipo float
+int parteEntera = (int)num;
+Console.WriteLine($"Parte Entera: {parteEntera}");
+
+}else{
+    Console.WriteLine("Entrada invalida");
+}
+
+
+int numA, numB;
+Console.WriteLine("Ingrese Numero A");
+string cadena1 = Console.ReadLine();
+Console.WriteLine("Ingrese Numero A");
+string cadena2 = Console.ReadLine();
+
+int.TryParse(cadena1, out numA);
+int.TryParse(cadena2, out numB);
+
+if (numA > numB)
+{
+    Console.WriteLine("El numero A es mayor al numero B");
+}else{
+    if (numB > numA)
+    {
+        Console.WriteLine("El numero B es mayor al numero A");
+    }else{
+        Console.WriteLine("los numeros son iguales");
+    }
 }

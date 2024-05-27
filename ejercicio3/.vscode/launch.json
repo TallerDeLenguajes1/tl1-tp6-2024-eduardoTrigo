@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/bin/Debug/net8.0/ejercicio3.dll", //CAMBIAR POR EL NOMBRE DEL .dll QUE ESTA EN LA CARPETA "bin"
             "args": [],
             "cwd": "${workspaceFolder}",
-            "console":"integratedTerminal",
+            "console": "integratedTerminal",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
