@@ -11,9 +11,9 @@ Console.WriteLine("la cadena ingresada es: " +cadena);
 Console.WriteLine("ingrese una nueva cadena");
 string cadena2 = Console.ReadLine();
 
-string Cconcatenada = cadena +""+ cadena2;
+string Cconcatenada = cadena +" "+ cadena2;
 
-Console.WriteLine("cadena concatenada: "+Cconcatenada);
+Console.WriteLine("cadena concatenada: " +Cconcatenada);
 
 //Extraer una subcadena de la cadena ingresada
 Console.WriteLine("ingrese un indice inicial de la sub-cadena");
@@ -69,5 +69,95 @@ if (float.TryParse(cadenaA, out numA) && float.TryParse(cadenaB, out numB) && (o
 // la funcion Tostring() sirve para convertir float o int en cadena de caracteres
 
 
+//Recorrer la cadena de texto con un ciclo Foreach e ir mostrando elemento por elemento en pantalla
+
+int i=1;
+foreach (char caracter in Cconcatenada)
+{ 
+    Console.WriteLine($"caracter {i}: {caracter}");
+    i++;
+}
 
 
+//Buscar la ocurrencia de una palabra determinada en la cadena ingresada
+
+Console.WriteLine("ingrese una palabra para buscar dentro de la cadena");
+string palabra = Console.ReadLine();
+
+int index = Cconcatenada.IndexOf(palabra);
+
+if (index != -1)
+{
+    Console.WriteLine($"la palabra se encuentra en el indice {index}");
+}else{
+    Console.WriteLine($"la palabra no se encuentra en la cadena");
+}
+
+//Convierta la cadena a mayúsculas y luego a minúsculas.
+
+string mayuscula = Cconcatenada.ToUpper();
+string minuscula = Cconcatenada.ToLower();
+
+Console.WriteLine($"Mayusculas: {mayuscula}");
+Console.WriteLine($"Minusculas: {minuscula}");
+
+//Ingrese una cadena separada por caracteres que usted determine y muestre por pantalla los resultados (Revisar el comportamiento de split())
+
+Console.WriteLine($"ingrese una cadena separada pos puntos");
+string cadenaSeparada = Console.ReadLine();
+
+string[] partes = cadenaSeparada.Split('.');
+
+Console.WriteLine("Partes de la Cadena");
+int j=1;
+foreach (string parte in partes)
+{
+    Console.WriteLine($"{j}) {parte.Trim()}");
+    j++;
+}
+
+//Siguiendo con el ejemplo de la calculadora (ejercicio 2) ingrese una ecuación
+// simple como cadena de caracteres y que el sistema lo resuelva. Por ej. ingrese
+// por pantalla “582+2” y que le devuelva la suma de 582 con 2
+
+Console.WriteLine("ingrese una ecuacion , ejemplo (524 + 35)");
+string ecuacion = Console.ReadLine();
+char operador ='+';
+
+if (ecuacion.Contains("+")) operador = '+';
+else if (ecuacion.Contains("-")) operador = '-';
+else if (ecuacion.Contains("*")) operador = '*';
+else if (ecuacion.Contains("/")) operador = '/';
+
+string[] numeros = ecuacion.Split(operador);
+
+int resultado=0;
+int numA = int.Parse(numeros[0]);
+int numB = int.Parse(numeros[1]);
+
+switch (operador)
+{
+    case '+':resultado = numA + numB;
+    break;
+
+    case '-':resultado = numA - numB;
+    break;
+
+    case '*':resultado = numA * numB;
+    break;
+
+    case '/':
+        if (numB != 0)
+        {
+            resultado = numA / numB;
+        }else
+        {
+            Console.WriteLine("operacion invalida");
+        }
+    break;
+
+    default:
+    break;
+}
+
+Console.WriteLine($"{resultado}");
